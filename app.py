@@ -9,6 +9,14 @@ with open('spam_classifier_model.pkl', 'rb') as file:
 with open('vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
 
+# Define the preprocess_message function
+def preprocess_message(text):
+    # Lowercase the text
+    text = text.lower()
+    # Remove leading and trailing whitespace
+    text = text.strip()
+    return text
+
 # Create the Streamlit user interface
 st.title("Spam Filter")
 
